@@ -1,27 +1,3 @@
-Based on our recent debugging session, it is highly recommended to add a **Troubleshooting** section to your README. This shows recruiters and users that you understand how to handle common API and configuration errors.
-
-Here is the **Troubleshooting** section to add, followed by the **Full Updated README** containing it.
-
-### ➕ Section to Add: Troubleshooting
-
-```markdown
-## ❓ Troubleshooting
-
-Common errors and how to fix them:
-
-| Error Message | Cause | Solution |
-| :--- | :--- | :--- |
-| `Expecting value: line 1 column 1 (char 0)` | The `token.json` or `credentials.json` file is empty/corrupted. | Delete the `token.json` file and restart the app to re-authenticate. |
-| `Error 403: access_denied` | The Google App is in "Testing" mode and your email is not authorized. | Go to GCP Console > **OAuth consent screen** > **Test Users** and add your email address. |
-| `HttpError 404 ... "File not found"` | The Script cannot find the destination folder on Google Drive. | Check `config.py`. Ensure `DRIVE_PARENT_FOLDER_ID` matches the exact ID from your Google Drive folder URL. |
-```
-
------
-
-### 📄 Full Updated README.md
-
-Here is the final version with the **Troubleshooting** section included.
-
 ````markdown
 # 📂 Payroll Automation & Cloud Distribution Tool
 
