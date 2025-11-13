@@ -1,0 +1,14 @@
+# Fichiers de sécurité Google (NE JAMAIS PUBLIER)
+credentials.json
+token.json
+client_secret_*.json
+
+# Fichiers système et Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Dossiers de données (On ne publie pas les bulletins réels ni les logs)
+output_bulletins/
+logs/
+input/
