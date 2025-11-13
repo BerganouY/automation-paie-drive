@@ -1,37 +1,42 @@
-````markdown
 # 📂 Payroll Automation & Cloud Distribution Tool
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Google Drive](https://img.shields.io/badge/Google%20Drive%20API-v3-green?style=for-the-badge&logo=google-drive&logoColor=white)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge)
 
 ## 📖 Overview
 
-This desktop application automates the monthly processing of employee payroll slips. It streamlines the workflow for accountants by eliminating manual file splitting and filing.
+This desktop application is designed to automate the monthly workflow of payroll distribution. It transforms a manual, time-consuming process into a one-click operation.
 
-**Key Features:**
-1.  **Smart PDF Splitting:** Automatically detects employee references and pay periods within a master PDF to generate individual files.
-2.  **Cloud Integration:** Uploads files directly to **Google Drive**.
-3.  **Dynamic Organization:** Checks if an employee's folder exists on the Drive; if not, it creates it automatically before uploading.
-4.  **User-Friendly GUI:** Built with `Tkinter` for a clean, responsive interface with real-time logging.
+**The Problem:** An accountant receives a single "Master PDF" containing payroll slips for all employees. Manually splitting this file and uploading each page to the correct employee's private folder on the cloud is tedious and error-prone.
 
-## 🚀 Project Architecture
+**The Solution:** This tool parses the PDF, identifies employee references using Regex, splits the files, and uses the Google Drive API to upload them to the correct destination (creating folders automatically if they don't exist).
+
+## ✨ Key Features
+
+* **Smart PDF Parsing:** Uses `pypdf` with a custom normalization engine to detect text (Reference, Month, Year) regardless of formatting inconsistencies or accents.
+* **Intelligent Uploads:** Implements a "Check-or-Create" logic. It searches Google Drive for the employee's folder based on their ID. If the folder is missing, it creates it instantly before uploading.
+* **Modern GUI:** A clean, responsive interface built with `Tkinter` featuring real-time logging and threaded operations (preventing UI freezing).
+* **Secure:** Sensitive API credentials are kept local and excluded from version control.
+
+## 🚀 Project Structure
 
 ```text
 GestionPaie/
 │
-├── input/                 # Drop your master PDF here
-├── output_bulletins/      # Generated individual PDFs
-├── logs/                  # Execution logs (.md files)
+├── input/                 # (Optional) Drop your master PDF here
+├── output_bulletins/      # Automatically generated individual PDFs
+├── logs/                  # Execution logs (.md files) for audit trails
 │
-├── config.py              # Configuration (Drive ID, Paths)
-├── splitter.py            # Core logic: PDF parsing & Regex extraction
-├── uploader.py            # Core logic: Google Drive API authentication & Upload
-├── main.py                # GUI Entry point
+├── config.py              # Configuration (Drive Folder ID, Paths)
+├── splitter.py            # Logic: PDF text extraction & normalization
+├── uploader.py            # Logic: Google Drive OAuth2 authentication & Upload
+├── main.py                # GUI Entry point (Tkinter)
 │
 ├── requirements.txt       # Python dependencies
-└── README.md              # Project documentation
-````
+└── README.md              # Documentation
+
 
 ## 🛠️ Local Setup & Configuration Guide
 
