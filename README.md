@@ -151,7 +151,7 @@ If the query returns empty, the script creates the folder first. This ensures th
 
 ## 👤 Author
 
-**Yassine** - *DevOps & Automation Portfolio*
+**Yassine**
 
 ```
 ```
